@@ -10,8 +10,9 @@ private:
     /* data */
     float *deviceVal;
     void allocDeviceMemory(unsigned int numPoints);
+    void copyHtoD(float *hostVal, unsigned int numPoints);
 public:
-    DeviceMem(unsigned int numPoints);
+    DeviceMem(unsigned int numPoints, float *hostVal);
     ~DeviceMem();
 };
 

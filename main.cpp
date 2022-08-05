@@ -22,7 +22,14 @@ int main(int argc, char const *argv[])
     // Create a grid
     Grid grid1(npx, npy, xLeft, xRight);
 
-    DeviceMem gpuObj(grid1.getGridnumPoints());
+    // Set the GPU memory
+    float *tmp = new float[grid1.getGridnumPoints()];
+    for (unsigned int i = 0; i < grid1.getGridnumPoints(); i++)
+    {
+        tmp[i] = grid1.getPointVal(i);
+    }
+
+    DeviceMem gpuObj(grid1.getGridnumPoints(), tmp);
 
     return 0;
 }

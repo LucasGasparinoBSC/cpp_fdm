@@ -3,7 +3,6 @@
 
 #include <cuda_runtime.h>
 #include <cuda.h>
-
 class DeviceMem
 {
 private:

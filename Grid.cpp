@@ -79,6 +79,11 @@ unsigned int Grid::getGridnumPoints()
     return numPoints;
 }
 
+float Grid::getGridNodeSpacing()
+{
+    return nodeSpacing;
+}
+
 // Setters
 void Grid::setPointData(unsigned int ipoin, float val)
 {

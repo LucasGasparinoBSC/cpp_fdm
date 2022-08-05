@@ -3,15 +3,16 @@
 
 #include <cuda_runtime.h>
 #include <cuda.h>
+
 class DeviceMem
 {
 private:
     /* data */
-    float *deviceVal;
-    void allocDeviceMemory(unsigned int numPoints);
-    void copyHtoD(float *hostVal, unsigned int numPoints);
+    float *val_dev;
+    void allocDeviceMemory(unsigned int numPoints_h);
+    void copyHtoD(float *hostVal, unsigned int numPoints_h);
 public:
-    DeviceMem(unsigned int numPoints, float *hostVal);
+    DeviceMem(unsigned int numPoints_h, float *hostVal);
     ~DeviceMem();
 };
 

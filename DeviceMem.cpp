@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <iostream>
 
+// Error checking function for CUDA API.
 #define gpuErrchk(ans) { gpuAssert((ans), __FILE__, __LINE__); }
 inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)
 {
@@ -12,22 +13,22 @@ inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=t
    }
 }
 
-void DeviceMem::allocDeviceMemory(unsigned int numPoints)
+void DeviceMem::allocDeviceMemory(unsigned int numPoints_h)
 {
-    gpuErrchk(cudaMalloc((void**) &deviceVal, numPoints * sizeof(float)));
+    gpuErrchk(cudaMalloc((void**) &val_dev, numPoints_h * sizeof(float)));
 }
 
-void DeviceMem::copyHtoD(float *hostVal, unsigned int numPoints)
+void DeviceMem::copyHtoD(float *hostVal, unsigned int numPoints_h)
 {
-    gpuErrchk(cudaMemcpy(deviceVal, hostVal, numPoints * sizeof(float), cudaMemcpyHostToDevice));
+    gpuErrchk(cudaMemcpy(val_dev, hostVal, numPoints_h * sizeof(float), cudaMemcpyHostToDevice));
 }
 
 // Constructor
-DeviceMem::DeviceMem(unsigned int numPoints, float *hostVal)
+DeviceMem::DeviceMem(unsigned int numPoints_h, float *hostVal)
 {
     std::cout << "Constructor called" << std::endl;
-    allocDeviceMemory(numPoints);
-    copyHtoD(hostVal, numPoints);
+    allocDeviceMemory(numPoints_h);
+    copyHtoD(hostVal, numPoints_h);
 }
 
 // Destructor

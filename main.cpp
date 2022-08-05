@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
         return 1;
     }
 
-    /// Initialize grid with command line inputs
+    // Initialize grid with command line inputs
     unsigned int npx = atoi(argv[1]);
     unsigned int npy = atoi(argv[2]);
     float xLeft = atof(argv[3]);
@@ -29,7 +29,9 @@ int main(int argc, char const *argv[])
         tmp[i] = grid1.getPointVal(i);
     }
 
-    DeviceMem gpuObj(grid1.getGridnumPoints(), tmp);
+    DeviceMem deviceMem(grid1.getGridnumPoints(), tmp);
+    // Free the temporary pointer
+    delete[] tmp;
 
     return 0;
 }

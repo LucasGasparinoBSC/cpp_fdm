@@ -1,5 +1,4 @@
-/Grid.o
-/Point.o
-/main.o
-/test
+*.o
+*.x
+*.g
 *.nsys-rep

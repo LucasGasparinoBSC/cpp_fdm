@@ -36,12 +36,48 @@ npx(npx), npy(npy), xMin(xLeft), xMax(xRight), numPoints(npx*npy), sideLength(xR
 {
     printAttributes();
     createPoints();
-    printPoints();
 }
 
 // Destructor
 Grid::~Grid()
 {
+}
+
+// Getters
+float Grid::getPointX(unsigned int ipoin)
+{
+    return points[ipoin].getX();
+}
+
+float Grid::getPointY(unsigned int ipoin)
+{
+    return points[ipoin].getY();
+}
+
+float Grid::getPointVal(unsigned int ipoin)
+{
+    return points[ipoin].getVal();
+}
+
+unsigned int Grid::getPointId(unsigned int ipoin)
+{
+    return points[ipoin].getId();
+}
+
+unsigned int Grid::getPointIdx_x(unsigned int ipoin)
+{
+    return points[ipoin].getIdx_x();
+}
+
+unsigned int Grid::getPointIdx_y(unsigned int ipoin)
+{
+    return points[ipoin].getIdx_y();
+}
+
+// Setters
+void Grid::setPointData(unsigned int ipoin, float val)
+{
+    points[ipoin].setVal(val);
 }
 
 // Print attributes
@@ -55,11 +91,8 @@ void Grid::printAttributes()
 }
 
 // Print points
-void Grid::printPoints()
+void Grid::printPoint(unsigned int ipoin)
 {
-    for (unsigned int i = 0; i < numPoints; i++)
-    {
-        std::cout << "Point " << i << ": " << points[i].getX() << ", " << points[i].getY() << ", " << points[i].getVal();
-        std::cout << " , " << points[i].getId() << ", " << points[i].getIdx_x() << ", " << points[i].getIdx_y() << std::endl;
-    }
+    std::cout << "Point " << ipoin << ": " << points[ipoin].getX() << ", " << points[ipoin].getY() << ", " << points[ipoin].getVal();
+    std::cout << " , " << points[ipoin].getId() << ", " << points[ipoin].getIdx_x() << ", " << points[ipoin].getIdx_y() << std::endl;
 }

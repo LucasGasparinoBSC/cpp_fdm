@@ -12,14 +12,14 @@ int main(int argc, char const *argv[])
         return 1;
     }
 
+    /// Initialize grid with command line inputs
     unsigned int npx = atoi(argv[1]);
     unsigned int npy = atoi(argv[2]);
     float xLeft = atof(argv[3]);
     float xRight = atof(argv[4]);
 
+    // Create a grid
     Grid grid1(npx, npy, xLeft, xRight);
-
-    // Create grid points
 
     return 0;
 }

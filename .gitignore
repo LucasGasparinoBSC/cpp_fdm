@@ -2,3 +2,4 @@
 /Point.o
 /main.o
 /test
+*.nsys-rep

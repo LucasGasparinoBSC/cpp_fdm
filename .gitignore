@@ -3,3 +3,4 @@
 *.g
 *.nsys-rep
 .vscode
+.trunk

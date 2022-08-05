@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/lucass/Documents/cpp_classAndStruct",
-      "program": "/home/lucass/Documents/cpp_classAndStruct/build/Debug/outDebug",
+      "cwd": "/home/lucas/cpp_fdm",
+      "program": "/home/lucas/cpp_fdm/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -74,6 +74,11 @@ unsigned int Grid::getPointIdx_y(unsigned int ipoin)
     return points[ipoin].getIdx_y();
 }
 
+unsigned int Grid::getGridnumPoints()
+{
+    return numPoints;
+}
+
 // Setters
 void Grid::setPointData(unsigned int ipoin, float val)
 {

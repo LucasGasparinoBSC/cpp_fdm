@@ -31,6 +31,7 @@ public:
     unsigned int getPointId(unsigned int ipoin);
     unsigned int getPointIdx_x(unsigned int ipoin);
     unsigned int getPointIdx_y(unsigned int ipoin);
+    unsigned int getGridnumPoints();
     // Setters
     void setPointData(unsigned int ipoin, float val);
     // Printers

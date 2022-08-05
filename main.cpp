@@ -1,4 +1,5 @@
 #include "Grid.h"
+#include "DeviceMem.h"
 #include <iostream>
 #include <cstdlib>
 
@@ -20,6 +21,8 @@ int main(int argc, char const *argv[])
 
     // Create a grid
     Grid grid1(npx, npy, xLeft, xRight);
+
+    DeviceMem gpuObj(grid1.getGridnumPoints());
 
     return 0;
 }

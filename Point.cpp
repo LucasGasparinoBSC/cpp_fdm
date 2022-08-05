@@ -22,6 +22,11 @@ float Point::getY()
     return y;
 }
 
+float Point::getVal()
+{
+    return val;
+}
+
 unsigned int Point::getId()
 {
     return id;
@@ -35,4 +40,10 @@ unsigned int Point::getIdx_x()
 unsigned int Point::getIdx_y()
 {
     return idx_y;
+}
+
+// Setter members
+void Point::setVal(float val)
+{
+    this->val = val;
 }

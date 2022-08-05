@@ -14,12 +14,14 @@ private:
     unsigned int numPoints; // Number of points in grid
     float sideLength; // Side length of grid
     float nodeSpacing; // Node spacing
-    float cellSize();
-    std::vector<Point> points;
+    std::vector<Point> points; // Cell points
+    float cellSize(); // Compute cell size
+    void createPoints(); // Create cell points
 public:
     Grid(unsigned int npx, unsigned int npy, float xLeft, float xRight);
     ~Grid();
     void printAttributes();
+    void printPoints();
 };
 
 #endif // !GRID_H

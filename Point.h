@@ -18,9 +18,12 @@ public:
     // Getters
     float getX();
     float getY();
+    float getVal();
     unsigned int getId();
     unsigned int getIdx_x();
     unsigned int getIdx_y();
+    // Setters
+    void setVal(float val);
 };
 
 #endif // !POINT_H
